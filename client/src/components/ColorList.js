@@ -94,6 +94,7 @@ const ColorList = ({ colors, makeRefresh }) => {
   }
 
   return (
+    
     <div className="colors-wrap">
       <p>colors</p>
       <ul>
@@ -146,8 +147,8 @@ const ColorList = ({ colors, makeRefresh }) => {
           </div>
         </form>
       )}
-      <div className="spacer" />
-      <form onSubmit={addColor}>
+      <div className="color-add" />
+      <form onSubmit={addColor} className="color-adder">
         <h1>New Color</h1>
         <hr />
         <input

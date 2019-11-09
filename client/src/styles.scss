@@ -14,7 +14,7 @@ body,
   font-family: "Montserrat", sans-serif;
   text-align: center;
   animation-name: colorChange;
-  animation-duration: 10s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   svg {
     height: 100%;
@@ -24,22 +24,37 @@ body,
 
 @keyframes colorChange {
   0% {
-      background: red;    
+      background: #edffec;    
   }
+  10% {
+    background: #f6d8ae;    
+}
   20% {
-      background: blue;    
+      background: #083d77;    
   }
+  30% {
+    background: #da4167;    
+}
   40% {
-      background: green;    
+      background: #726da8;    
   }
+  50% {
+    background: #7d8cc4;    
+}
   60% {
-      background: orange;    
+      background: #A0d2db;    
   }
+  70% {
+    background: #bee7e8;    
+}
   80% {
-      background: purple;    
+      background: #256eff;    
   }
+  90% {
+    background: #46237a;    
+}
   100% {
-      background: red;    
+      background: #fcfcfc;    
   }
 }
 
@@ -70,6 +85,14 @@ body,
       width: 100%;
     }
   }
+}
+
+.color-adder {
+  background-color: transparent;
+  border: none;
+}
+.color-add {  
+  float: right;
 }
 
 .delete {
