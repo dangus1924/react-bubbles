@@ -58,7 +58,7 @@ function Login(props) {
           onChange={handleChanges}
           required
         />
-        <button className="addBtn btn" type="submit">
+        <button className="btn" type="submit">
           Login
         </button>
       </form>
