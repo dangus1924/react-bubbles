@@ -13,10 +13,34 @@ body,
   padding: 0;
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  animation-name: colorChange;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
   svg {
     height: 100%;
   }
 
+}
+
+@keyframes colorChange {
+  0% {
+      background: red;    
+  }
+  20% {
+      background: blue;    
+  }
+  40% {
+      background: green;    
+  }
+  60% {
+      background: orange;    
+  }
+  80% {
+      background: purple;    
+  }
+  100% {
+      background: red;    
+  }
 }
 
 .spacer {
@@ -60,11 +84,12 @@ body,
 }
 
 form {
-  margin: 60px;
+  margin: 200px;
   display: flex;
   flex-direction: column;
   width: 300px;
   border: dotted blue ;
+  background-color: white;
   
 
   legend {

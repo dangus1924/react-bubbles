@@ -40,7 +40,8 @@ function Login(props) {
   return (
     <div className='formContainer'>
       <form onSubmit={handleSubmit}>
-        <h1>Login Form</h1>
+        <h1>BUBBLES </h1>
+        <h2>Login Form</h2>
         <hr />
         <input
           type="text"
