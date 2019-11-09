@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { axiosWithAuth as axios } from "axios";
+import { axiosWithAuth as axios } from '../utils/axiosAuth';
 import Bubbles from "./Bubbles";
 import ColorList from "./ColorList";
 
 const BubblePage = () => {
   const [colorList, setColorList] = useState([]);
-  const [data, setData] = useState(false)
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    axios()
-      .get('./api/colors')
+    axios().get('/api/colors')
       .then(res => {
         setColorList(res.data)
       })
       .catch(err => {
-        console.log(err, 'Bubble machine borken, I think it need a new battery')
+        console.log(err, 'You did not get your bubbles!')
       })
-  }, [data])
+  }, [refresh])
 
-  const makeData = () => {
-    setData(!data)
+  const makeRefresh = () => {
+    setRefresh(!refresh)
   }
+
   return (
     <>
-      <ColorList colors={colorList} makeData={makeData} />
+      <ColorList colors={colorList} makeRefresh={makeRefresh} />
       <Bubbles colors={colorList} />
     </>
   );
