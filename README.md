@@ -29,19 +29,23 @@ In this project you will create a login page and request a token from the server
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain what a token is used for.
+  Token are use when your are doing something like login and out, they make up a log secured code that goes into the local storage and it is unique to the user.
 - [ ] What steps can you take in your web apps to keep your data secure?
+    There are a lot of ways to keep your app safe, a few are keeping the app and it's dependencies up to date keep things vulnerabilties out of your local storage such as ID where hackers can get to. keep up to date with the certificate and SSL.
 - [ ] Describe how web servers work.
+      Web servers are programs that use HTTP to get files form a Web page
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+    Crud stands for Create read update and delete  and the methods that we use are  axios.get,.put, .post, .delete and so on. 
 
 
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add PM as collaborator on Github.
-- [ ] Clone your OWN version of Repo (Not Lambda's by mistake!).
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add PM as collaborator on Github.
+- [x] Clone your OWN version of Repo (Not Lambda's by mistake!).
+- [x] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
 - [ ] Implement the project on this Branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 - [ ] **RUN** `yarn install or npm install` at the root to retrieve all the dependencies for the node server. You will not need to create any react apps here nor will you need to install any other dependencies. You should have all you need in this repo.
