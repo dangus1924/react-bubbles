@@ -1,59 +1,66 @@
 import React, { useState, usseEffect } from 'react';
-import axios from 'axios';
+import { axiosWithoutAuth as axios }from '../utils/axiosAuth';
 
-function Login(props) {
+export default function Login(props) {
     const [user, setUser] = useState({
         email: '',
         password: '',
     })
 
-    usseEffect(() => {
-      axios
-        .get(`http://localhost:5000/api/login/${props.match.params.id}`)
-        .then(res => {
-          console.log(res)
-        })
-    })
-
-    const handleChange = (e) => {
-        setUser({
-            ...user, 
-            [e.target.name]: e.target.value
-        })
+    const handleChanges = e => {
+      setUser({
+        ...user,
+        [e.target.name]: e.target.value
+      })
+    };
+  
     const handleSubmit = (e) => {
       e.preventDefault();
-        axios
-        .put(`http://localhost:5000/api/login/${user.id}`, user)
+      axios()
+        .post('/api/login', user)
         .then(res => {
-            
+          console.log(res.data)
+          localStorage.setItem("token", res.data.payload);
+          props.history.push('/bubbles');
         })
         .catch(err => {
-            console.log(err)
+          return err.response
         })
-
+      resetForm();
     }
+  
+    const resetForm = () => {
+      setUser({
+        username: '',
+        password: ''
+      })
     }
+  
     return (
-        <>
-            <h1>Welcome to the Bubble Page</h1>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="email" 
-                    name='name'
-                    placeholder='Email'
-                    value={user.email}
-                    onChange={handleChange}
-                />
-                <input 
-                    type='password'
-                    name='password'
-                    placeholder='Password'
-                    vale={user.password}
-                    onChange={handleChange}
-                />
-            </form>
-        </>
+      <div className='formContainer'>
+        <form onSubmit={handleSubmit}>
+          <h1>Login Form</h1>
+          <hr />
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            value={user.username}
+            onChange={handleChanges}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={user.password}
+            onChange={handleChanges}
+            required
+          />
+          <button  type="submit">
+            Login
+          </button>
+        </form>
+      </div>
     )
-}
-
-export default Login;
+  }
